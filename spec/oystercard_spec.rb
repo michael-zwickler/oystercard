@@ -3,8 +3,10 @@ require "oystercard"
 
 describe OysterCard do
 
-  it "Fresh Oystercard has a balance of zero" do
-    expect(subject.balance).to eq(0)
+  context 'when oystercard is initiated' do
+    it 'balance should be 0' do   
+      expect(subject.balance).to eq(0)
+    end
   end
 
   describe '#top_up!' do
@@ -14,7 +16,7 @@ describe OysterCard do
     it 'Throws an error when a certain limit reached' do
       limit = OysterCard::MAX_BALANCE
       subject.top_up!(limit)
-      expect { subject.top_up!(1)}.to raise_error("Limit reached. Limit is #{limit}!")
+      expect { subject.top_up!(1) }.to raise_error("Limit reached. Limit is #{limit}!")
     end
   end
 
