@@ -4,9 +4,7 @@ require "oystercard"
 describe OysterCard do
 
   context 'when oystercard is initiated' do
-    it 'balance should be 0' do   
-      expect(subject.balance).to eq(0)
-    end
+    it { expect(subject.balance).to eq(0) }
   end
 
   describe '#top_up!' do
