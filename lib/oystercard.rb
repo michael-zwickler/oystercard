@@ -1,4 +1,4 @@
-class Oystercard
+class OysterCard
 
   MAX_BALANCE = 90
 
