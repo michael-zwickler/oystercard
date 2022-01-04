@@ -9,11 +9,7 @@ describe Oystercard do
 
   describe '#top_up!' do
     it 'adds money to the oystercard' do
-      balance_before = subject.balance
-      subject.top_up!(10)
-      delta = subject.balance - balance_before
-
-      expect(delta).to eq(10)
+      expect { subject.top_up!(10) }.to change{ subject.balance }.by 10
     end
   end
 
